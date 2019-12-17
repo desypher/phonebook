@@ -16,6 +16,7 @@ export class HomeComponent {
   displayedColumns: string[] = ['name', 'phoneNumber'];
   newEntry = new PhonebookEntry();
   existingRecords = new MatTableDataSource();
+  hasLoaded = false;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
@@ -42,6 +43,7 @@ export class HomeComponent {
         parent.existingRecords = new MatTableDataSource(result.successResponse);
         //Pagination
         parent.existingRecords.paginator = parent.paginator;
+        parent.hasLoaded = true;
       } else {
         console.log(result.errorResponse)
         parent.snackBar.open(result.errorMessage, 'Dismiss', { duration: 3000 })
