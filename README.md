@@ -22,3 +22,4 @@ To run the release version:
 3. Run "phonebook-web.exe" and a cmd window will open
 4. Open your browser and type in 
   https://localhost:5001/
+5. Check the connection string in app.config which can be found in the 'phonebook-web' directory on the repo or in the main directory of the distributional version to ensure the database details are correct if you are using a different SQL environment.
